@@ -40,10 +40,7 @@ def dirlist(path, allfile):
        
         if os.path.isdir(filepath):  
             dirlist(filepath, allfile)  
-#            type=os.path.splitext(filename)[1]
-#            if not type in image_types:
-#                os.remove()
-        else:  
+        else:
             allfile.append(filepath)  
     return allfile 
 
