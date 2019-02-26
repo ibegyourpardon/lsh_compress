@@ -15,6 +15,9 @@ url = sys.argv[1]
 #第二个参数为压缩质量
 thequality = sys.argv[2]
 
+print ('参数个数为:', len(sys.argv), '个参数。')
+print ('参数列表:', str(sys.argv))
+
 #print(url)
 #目标文件夹上级父目录
 hjx = os.path.abspath(os.path.join(os.path.dirname(url),os.path.pardir))
