@@ -13,9 +13,9 @@ import shutil
 #第一个参数为输入文件夹路径
 url = sys.argv[1]
 #第二个参数为压缩质量
-thequality = sys.argv[2]
+thequality = int(sys.argv[2])
 
-print ('参数个数为:', len(sys.argv), '个参数。')
+print (thequality)
 print ('参数列表:', str(sys.argv))
 
 #print(url)
