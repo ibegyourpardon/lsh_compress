@@ -24,7 +24,7 @@ def mkdir(path):
 #读取文件列表
 def dirlist(path, allfile):  
     #filelist =  os.listdir(path)
-    #下面这句用 glob 排除掉了 . 开头的隐藏文件 
+    #下面这句用 glob 排除掉了 . 开头的隐藏文件
     filelist = glob.glob(os.path.join(path, '*'))
   
     for filename in filelist:  
