@@ -1,14 +1,13 @@
 #!/usr/bin/python
-#how to use
-#python compress.py 图片目录的绝对路径
+#coding:utf-8
+decode('gbk').encode('utf-8')
+
 from PIL import Image
 import os
 import sys
 import glob
 import shutil
 
-#设定目标输出路径文件夹
-#desdir = "/lsh_des/"
 #读取参数
 #第一个参数为输入文件夹路径
 url = sys.argv[1]
