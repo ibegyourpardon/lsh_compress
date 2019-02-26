@@ -22,17 +22,6 @@ desdir = hjx + "/lsh_" + hw
 #唔，先，复制个文件夹出来再说 2333
 shutil.copytree(url,desdir)
 
-#先不管了，复制一个原始的文件目录出来， 万一还要用呢，对吧
-
-#创建文件夹
-# def mkdir(path):
-#     folder = os.path.exists(path + desdir)
-#     if not folder:
-#         os.makedirs(path +  desdir )
-#     else:
-#         print("-----")
-
-
 #读取文件列表
 def dirlist(path, allfile):  
     #filelist =  os.listdir(path)
@@ -58,11 +47,6 @@ def default_compress_jpeg(path,extname):
     lsh_jpeg = Image.open(path)
     lsh_jpeg.save(newpath,'JPEG',quality=50 )
 
-# 默认压缩jpg
-def default_compress_jpg(path,extname):
-    lsh_jpg = Image.open(path)
-    lsh_jpg.save(newpath,'JPEG',quality=50 )
-
 # 默认压缩 png
 def default_compress_png(path,newpath):
     lsh_png = Image.open(path)
@@ -73,7 +57,7 @@ def default_compress_png(path,newpath):
 list = dirlist(desdir,[])
 print("待处理文件列表")
 print(list)
-
+print("开始压缩")
 for x in list:
     image_types = [".jpg",".png",".jpeg"]
     fullpath = os.path.abspath(x)
@@ -89,7 +73,7 @@ for x in list:
             print(fullpath + "压缩成功")
             print("========")
         elif extname == ".jpg":
-            default_compress_jpg(fullpath,newpath)
+            default_compress_jpeg(fullpath,newpath)
             print(fullpath + "压缩成功")
             print("========")
         elif extname ==".jpeg":
