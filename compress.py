@@ -4,23 +4,28 @@
 from PIL import Image
 import os
 import sys
+import glob
 
+#设定目标输出路径文件夹
+desdir = "/lsh_des/"
 #输入文件夹路径
 url = sys.argv[1]
 
 
 #创建文件夹
 def mkdir(path):
-    folder = os.path.exists(path + "/des")
+    folder = os.path.exists(path + desdir)
     if not folder:
-        os.makedirs(path +  "/des")
+        os.makedirs(path +  desdir )
     else:
         print("-----")
 
 
 #读取文件列表
 def dirlist(path, allfile):  
-    filelist =  os.listdir(path)
+    #filelist =  os.listdir(path)
+    #下面这句用 glob 排除掉了 . 开头的隐藏文件 
+    filelist = glob.glob(os.path.join(path, '*'))
   
     for filename in filelist:  
         filepath = os.path.join(path, filename)
@@ -61,7 +66,7 @@ for x in list:
 
 #在每个目录下创建对应的 des 目录用于存放压缩后的新图片
         mkdir(path)
-        newpath = path + "/des/" + filename
+        newpath = path + desdir + filename
         if extname == ".png":
             default_compress_png(fullpath,newpath)
             print(fullpath + "压缩成功")
