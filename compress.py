@@ -9,8 +9,12 @@ import shutil
 
 #设定目标输出路径文件夹
 #desdir = "/lsh_des/"
-#读取参数，输入文件夹路径
+#读取参数
+#第一个参数为输入文件夹路径
 url = sys.argv[1]
+#第二个参数为压缩质量
+thequality = sys.argv[2]
+
 #print(url)
 #目标文件夹上级父目录
 hjx = os.path.abspath(os.path.join(os.path.dirname(url),os.path.pardir))
@@ -45,12 +49,12 @@ def dirlist(path, allfile):
 # 默认压缩jpeg
 def default_compress_jpeg(path,extname):
     lsh_jpeg = Image.open(path)
-    lsh_jpeg.save(newpath,'JPEG',quality=50 )
+    lsh_jpeg.save(newpath,'JPEG',quality= thequality )
 
 # 默认压缩 png
 def default_compress_png(path,newpath):
     lsh_png = Image.open(path)
-    lsh_png.save(newpath,'PNG',quality=50 )
+    lsh_png.save(newpath,'PNG',quality= thequality )
 
 
 #列出目标文件夹下所有文件
