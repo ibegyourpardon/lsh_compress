@@ -51,10 +51,6 @@ def dirlist(path, allfile):
             allfile.append(filepath)  
     return allfile 
 
-#列出目标文件夹下所有文件
-list = dirlist(desdir,[])
-print(list)
-
 
 
 # 默认压缩jpeg
@@ -68,6 +64,11 @@ def default_compress_png(path,newpath):
     lsh_png = Image.open(path)
     lsh_png.save(newpath,'PNG',quality=50 )
 
+
+#列出目标文件夹下所有文件
+list = dirlist(desdir,[])
+print("待处理文件列表")
+print(list)
 
 for x in list:
     image_types = [".jpg",".png",".jpeg"]
