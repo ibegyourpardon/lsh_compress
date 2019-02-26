@@ -25,12 +25,12 @@ shutil.copytree(url,desdir)
 #先不管了，复制一个原始的文件目录出来， 万一还要用呢，对吧
 
 #创建文件夹
-def mkdir(path):
-    folder = os.path.exists(path + desdir)
-    if not folder:
-        os.makedirs(path +  desdir )
-    else:
-        print("-----")
+# def mkdir(path):
+#     folder = os.path.exists(path + desdir)
+#     if not folder:
+#         os.makedirs(path +  desdir )
+#     else:
+#         print("-----")
 
 
 #读取文件列表
@@ -55,9 +55,13 @@ def dirlist(path, allfile):
 
 # 默认压缩jpeg
 def default_compress_jpeg(path,extname):
-    lsh_png = Image.open(path)
-    lsh_png.save(newpath,'JPEG',quality=50 )
+    lsh_jpeg = Image.open(path)
+    lsh_jpeg.save(newpath,'JPEG',quality=50 )
 
+# 默认压缩jpg
+def default_compress_jpg(path,extname):
+    lsh_jpg = Image.open(path)
+    lsh_jpg.save(newpath,'JPEG',quality=50 )
 
 # 默认压缩 png
 def default_compress_png(path,newpath):
@@ -77,16 +81,15 @@ for x in list:
     filename = os.path.split(x)[1]
     extname = os.path.splitext(x)[1]
     if extname in image_types:
+        print(fullpath)
 
-#在每个目录下创建对应的 des 目录用于存放压缩后的新图片
-        #mkdir(path)
-        newpath = desdir + filename
+        newpath = fullpath
         if extname == ".png":
             default_compress_png(fullpath,newpath)
             print(fullpath + "压缩成功")
             print("========")
         elif extname == ".jpg":
-            default_compress_jpeg(fullpath,newpath)
+            default_compress_jpg(fullpath,newpath)
             print(fullpath + "压缩成功")
             print("========")
         elif extname ==".jpeg":
