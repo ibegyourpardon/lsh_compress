@@ -7,7 +7,8 @@ import sys
 import glob
 import shutil
 import time
-#
+from colorama import Fore, Back, Style
+
 start = time.clock()
 #读取参数
 #第一个参数为输入文件夹路径
@@ -95,4 +96,4 @@ for x in list:
 
 #计算程序运行时间
 elapsed = (time.clock() - start)
-print("图片压缩完成,耗时:" + str(elapsed) + "秒")
+print (Fore.BLUE +  "图片压缩完成,耗时:" + str(elapsed) + "秒")
