@@ -63,6 +63,7 @@ list = dirlist(desdir,[])
 print("待处理文件列表")
 print(list)
 print("开始压缩")
+i = 0
 for x in list:
     image_types = [".jpg",".png",".jpeg"]
     fullpath = os.path.abspath(x)
@@ -71,7 +72,7 @@ for x in list:
     extname = os.path.splitext(x)[1]
     if extname in image_types:
         #print(fullpath)
-
+        i = i+1
         newpath = fullpath
         if extname == ".png":
             default_compress_png(fullpath,newpath)
@@ -93,4 +94,5 @@ for x in list:
 
 #计算程序运行时间
 elapsed = (time.clock() - start)
+print(Fore.BLUE + "所有图片压缩完成,一共压缩了" + str(i) + "张图片")
 print (Fore.BLUE +  "图片压缩完成,耗时:" + str(elapsed) + "秒")
