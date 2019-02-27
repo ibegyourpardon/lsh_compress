@@ -70,21 +70,18 @@ for x in list:
     filename = os.path.split(x)[1]
     extname = os.path.splitext(x)[1]
     if extname in image_types:
-        print(fullpath)
+        #print(fullpath)
 
         newpath = fullpath
         if extname == ".png":
             default_compress_png(fullpath,newpath)
-            print(fullpath + "压缩成功")
-            print("========")
+            print("正在压缩" + fullpath)
         elif extname == ".jpg":
             default_compress_jpeg(fullpath,newpath)
-            print(fullpath + "压缩成功")
-            print("========")
+            print("正在压缩" + fullpath)
         elif extname ==".jpeg":
             default_compress_jpeg(fullpath,newpath)
-            print(fullpath + "压缩成功")
-            print("========")
+            print("正在压缩" + fullpath)
         else:
             print(filename + "不是受支持的图片文件类型")
 
