@@ -6,7 +6,9 @@ import os
 import sys
 import glob
 import shutil
-
+import time
+#
+start = time.clock()
 #读取参数
 #第一个参数为输入文件夹路径
 url = sys.argv[1]
@@ -91,3 +93,6 @@ for x in list:
     else:
         print("incorrect type")
 
+#计算程序运行时间
+elapsed = (time.clock() - start)
+print("图片压缩完成,耗时:" + str(elapsed) + "秒")
