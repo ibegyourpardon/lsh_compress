@@ -9,7 +9,27 @@ import shutil
 import time
 from colorama import Fore, Back, Style
 
+print("""\
+
+                                       ._ o o
+                                       \_`-)|_
+                                    ,""       \
+                                  ,"  ## |   ಠ ಠ.
+                                ," ##   ,-\__    `.
+                              ,"       /     `--._;)
+                            ,"     ## /
+                          ,"   ##    /
+
+
+                    """)
+
+
+print("正在初始化")
+time.sleep(1)
+
+#记录程序开始执行的时间
 start = time.clock()
+
 #读取参数
 #第一个参数为输入文件夹路径
 source_dir = sys.argv[1]
@@ -26,6 +46,8 @@ hjx = os.path.abspath(os.path.join(os.path.dirname(source_dir),os.path.pardir))
 hw = os.path.basename(os.path.normpath(source_dir))
 #新目录
 desdir = hjx + "/lsh_" + hw
+
+
 
 #唔，先，复制个文件夹出来再说 2333
 shutil.copytree(source_dir,desdir)
