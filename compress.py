@@ -1,6 +1,5 @@
 #!/usr/bin/python
 #coding:utf-8
-decode('gbk').encode('utf-8')
 
 from PIL import Image
 import os
