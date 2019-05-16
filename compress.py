@@ -9,42 +9,6 @@ import shutil
 import time
 from colorama import Fore, Back, Style
 
-print("""\
-|
-|lllllllllllllllllllll'.ldc,.,:lllllllllllllllllllll:'..:xOO0d.,l|
-|lllllllllllllllllllll.';oOOkc..,clllllllllllllll:'..,dO0x,l00;.c|
-|llllllllllllllllllllc c,.kOxdl,  ..'''''..'......,lO000k',;x0o ;|
-|llllllllllllllllllll; o. .',:clodddddodxxxxxxxddOKK000O,';;o0O.,|
-|lllllllllllllllllll:. ';okKKKKKKKKKKKKKKKKKKKKKKKKKKKK;.;;;lK0,.|
-|lllllllllllllllll;..;d0KKKKKKKKKKKKKKKKKXXXKKKKKKKKKKKx:,',xKK:.|
-|lllllllllllllll:..lO0000KXNNNXXKKKKKKXXXWWWWNKKKKKKKKKKKKOOKKK: |
-|llllllllllllll:.,O00OkxxkKNWWWWNKKKKXWWWWXOdlc::clox0KKKKKKKKKd.|
-|llllllllllllll,.kk:',;:.  .'oXWNKKKKKNXo,':od'      .:OKKKKKKKKo|
-|llllllllllllll'.x.:XWNc      '0KKKKKKK;.0WWW0         'KKKKKKKKK|
-|llllllllllllll'.x.,kXN;      ,0KKKKKKKl.o0XWN'       .oNXKKKKKKK|
-|llllllllllllll'.KXxc;,,... .l0KKKKK0000xc::;:,''',;cxXWWWNXKKKKK|
-|llllllllllllll.,NNNNNNNkccd00000000000KXNNNNNNWWWWWWWWWWWWWNXKKK|
-|lllllllllllll: oNNNNNNc:Oc,'...';oKXXNNNNNNWWWWWWWWWWWWWWWWWNXKK|
-|lllllllllllll, kNNNNNO'KK'       :XNNNWWWWWWWWWWWWWWWWWWWWWWWNKK|
-|lllllllllllll' ONWWWWXdWWXd:. ;o0NWWWNXWWWWWWWWWWWWWWWWWWWWWWNKK|
-|lllllllllllll, dNWWWWWkxKK0Xx.OXNNWXXWKNXkKWWWWWWWWWWWWWWWWWWN00|
-|lllllllllllllc..KNWWWWk'cdkx, ,okOKXXKxx'.dWWWWWWWWWWWWWWWNNNX00|
-|llllllllllllllc.'0WWWWNXkl:,......,,;;cokXWWWWWWWWWWWWWWNNNNX000|
-|lllllllllllllllc..dNWNNNNXX0OOOOO0KXNWWWWWWWWWWWWWWWWNNNNNNK0000|
-|lllllllllllllllll, .o0NNNNNNNNNNNNNWWWWWWWWWWWWWWNNNNNNNXK000000|
-|llllllllllllllllc..cc,';lx0NNNWWWWWWWWWWWWWWWWWWWNNNNNXK000000OO|
-|llllllllllllllll' dNNNX0koloxOXNNNNWWWWWWWWNNNNNNNNNXXKK000OOOOO|
-|lllllllllllllllc..0XXXXNNNNNNNNNNNNNNNK0OOOO0XNNNNNNNNNNX00OOOOO|
-|lllllllllllllll, :XXXXXXNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNX000OO00|
-|lllllllllllllc' '0XXXXNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNK0000000|
-|llllllllllll:. c0XXXNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNXK000000000|
-|lllllllllll:..o000OO0XNNNNNNNNNNNNNNNNNNNNNNXXXNNXKK000000000000|
-|lllllllllll. l000Odl:::coOXNNNNNNNNNNN0xl:;;;co00000000000000000|
-|llllllllll: '0000000000ko:,:kNNNNNXk:,;cdxO000000000000000000000|
-|llllllllll; ;0000000000000O:.cXNNK;.cO00000000000000000000Oll000|
-+----------------------------------------------------------------+'
-                    """)
-
 
 print("正在初始化")
 time.sleep(1)
@@ -64,12 +28,16 @@ print ('参数列表:', str(sys.argv))
 #print(source_dir)
 #目标文件夹上级父目录
 hjx = os.path.abspath(os.path.join(os.path.dirname(source_dir),os.path.pardir))
+print ("父目录")
+print (hjx)
 #源目录最后一段
 hw = os.path.basename(os.path.normpath(source_dir))
+print ("源目录最后一段")
+print (hw)
 #新目录
 desdir = hjx + "/lsh_" + hw
 
-
+print (desdir)
 
 #唔，先，复制个文件夹出来再说 2333
 shutil.copytree(source_dir,desdir)
